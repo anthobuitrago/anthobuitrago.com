@@ -1,0 +1,53 @@
+<section>
+    <h2>Preguntas frecuentes</h2>
+
+    <details>
+        <summary>¿Cual es tu país favorito?</summary>
+        <p>Creo que Suiza tiene un rincón especial en mi mente, además es al que mas veces he viajado.</p>
+    </details>
+    <details>
+        <summary>¿Te gusta mas la programación o la fotografía?</summary>
+        <p>Sin dudar la programación me apasiona mas, la fotografía tan solo es un hobby para mí.</p>
+    </details>
+</section>
+
+<section>
+    <h2>Formulario de contacto</h2>
+
+    <form method="post" action="/">
+        <fieldset>
+            <legend>Información personal</legend>
+
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name"
+            placeholder="Anthony Buitrago" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"
+            placeholder="anthobuitrago@gmail.com" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Información adicional</legend>
+
+            <label for="phone">Teléfono:</label>
+            <input type="tel" id="phone" name="phone"
+            placeholder="+57 320 888 9999" >
+            <br>
+            <datalist id="countries">
+                <option value="Alemania"></option>
+                <option value="España"></option>
+                <option value="Italia"></option>
+                <option value="Suiza"></option>
+                <option value="Croacia"></option>
+            </datalist>
+            <label>
+                ¿Cual país te gusta más?
+                <input list="countries" name="countries">
+            </label>
+        </fieldset>
+
+        
+        <button type="submit">Enviar contecto</button>
+    </form>
+</section>
