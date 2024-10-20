@@ -48,7 +48,6 @@ hr {
     grid-area: title;
     color: #f0f0f0;
     margin: 0 32px 0 32px;
-    justify-self: start;
     align-self: center;
     font-size: 3rem;
     transition: font-size 500ms;
@@ -83,6 +82,7 @@ hr {
 .content {
     display: grid;
     grid-area: main;
+    grid-template-columns: 1fr;
     max-width: 1920px;
     margin: 0 auto;
 }
@@ -91,7 +91,7 @@ hr {
     font-size: 3rem;
     text-align: center;
     margin: 0;
-    padding: 16px;
+    padding: 16px 16px;
 }
 
 .content h3:first-child {
@@ -159,7 +159,7 @@ hr {
 .homeImages {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-    gap: 2rem;
+    gap: 32px;
     padding: 16px 48px 42px;
     margin: 0;
 }
@@ -194,7 +194,7 @@ hr {
     margin: 0 48px 0;
     animation: revealT ease-in both;
     animation-timeline: view();
-    animation-range: entry cover 20%;
+    animation-range: entry 0% cover 30%;
 }
 
 .contentBlog article header h3 {
@@ -375,17 +375,27 @@ hr {
 
 @media (max-width: 470px) {
 
+    hr {
+        margin: 56px 32px 0;
+    }
+
     .headerBar {
         grid-template-areas: "title title title" "nav nav nav";
         gap: 16px;
-        position: relative;
     }
+
     .headerBar a h1 {
-        font-size: 1rem;
+        font-size: 2rem;
+        justify-self: center;
     }
     
     .headerBar nav {
-        justify-self: start;
+        justify-self: center;
+        gap: 48px;
+    }
+
+    .headerBar nav a {
+        font-size: 1rem;
     }
     
     #visitedCountries ol {
@@ -393,16 +403,21 @@ hr {
     }
 
     .homeImages {
-        padding: 1rem;
+        padding: 16px;
+    }
+
+    .contentBlog:first-of-type {
+        margin: 6px auto 48px;
     }
 
     .contentAboutMe #contactInfo {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .contentAboutMe #contactInfo img {
         width: 229px;
+        margin-top: 32px;
     }
 }
 
@@ -411,7 +426,6 @@ hr {
         transform: translateY(80px);
     }
 }
-
 
 @keyframes revealOST {
     from {
